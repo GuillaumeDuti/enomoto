@@ -206,7 +206,7 @@ nav .bottom p {
   max-width: 500px;
 }
 
-nav .bottom a {
+nav .bottom #about-link {
   text-decoration: none;
 }
 

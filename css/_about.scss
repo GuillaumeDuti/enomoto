@@ -4,4 +4,28 @@
     &.active {
         display: block;
     }
+    p {
+        // :first-child {
+        //     margin-right: 10px;
+        // }
+        a {
+
+            margin-left: 10px;
+            position: relative;
+            &::after {
+                content: ", ";
+                position: absolute;
+                right: -5px;
+            }
+            &:first-of-type {
+                margin-left: 0;
+            }
+            &:last-of-type {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+
 }

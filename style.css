@@ -232,6 +232,7 @@ nav .bottom #about-link {
 
 #menu details > summary {
   list-style: none;
+  padding: 2px 0;
 }
 
 #menu details > summary::-webkit-details-marker {
@@ -282,5 +283,24 @@ nav .bottom #about-link {
 
 #about-section.active {
   display: block;
+}
+
+#about-section p a {
+  margin-left: 10px;
+  position: relative;
+}
+
+#about-section p a::after {
+  content: ", ";
+  position: absolute;
+  right: -5px;
+}
+
+#about-section p a:first-of-type {
+  margin-left: 0;
+}
+
+#about-section p a:last-of-type::after {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

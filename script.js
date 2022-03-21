@@ -1,39 +1,42 @@
 import data from './data/data.js';
+import { generateAbout, generateMenu } from './menu.js';
 import projectSideRendering from './projectSide.js';
 let selectedProject = [];
 
-const menu = document.querySelector('#menu');
+generateMenu(data.work);
+generateAbout(data.description, data.links);
+// const menu = document.querySelector('#menu');
 
-data.forEach(field => {
-    const fieldTitle = field['field-activity'];
+// data.work.forEach(field => {
+//     const fieldTitle = field['field-activity'];
 
-    const fieldLi = document.createElement('li');
-    const fieldDetails = document.createElement('details');
-    const fieldSummary = document.createElement('summary');
-    // const fieldSpan = document.createElement('')
-    const fieldUl = document.createElement('ul');
-    fieldUl.id = `menu_${fieldTitle}`;
+//     const fieldLi = document.createElement('li');
+//     const fieldDetails = document.createElement('details');
+//     const fieldSummary = document.createElement('summary');
+//     // const fieldSpan = document.createElement('')
+//     const fieldUl = document.createElement('ul');
+//     fieldUl.id = `menu_${fieldTitle}`;
 
-    fieldSummary.textContent = fieldTitle;
-    menu.appendChild(fieldLi);
-    fieldLi.appendChild(fieldDetails);
-    fieldDetails.appendChild(fieldSummary);
-    fieldDetails.appendChild(fieldUl);
+//     fieldSummary.textContent = fieldTitle;
+//     menu.appendChild(fieldLi);
+//     fieldLi.appendChild(fieldDetails);
+//     fieldDetails.appendChild(fieldSummary);
+//     fieldDetails.appendChild(fieldUl);
 
-    const projects = field.projects;
+//     const projects = field.projects;
 
-    projects.forEach(project => {
-        const projectTitle = project.name;
-        const projectLi = document.createElement('li');
+//     projects.forEach(project => {
+//         const projectTitle = project.name;
+//         const projectLi = document.createElement('li');
 
-        const projectA = document.createElement('a');
-        projectA.href = "#";
-        projectA.textContent = projectTitle;
+//         const projectA = document.createElement('a');
+//         projectA.href = "#";
+//         projectA.textContent = projectTitle;
 
-        projectLi.appendChild(projectA);
-        fieldUl.appendChild(projectLi);
-    });
-});
+//         projectLi.appendChild(projectA);
+//         fieldUl.appendChild(projectLi);
+//     });
+// });
 
 
 const linksProjects = document.querySelectorAll('#menu a');
@@ -51,7 +54,7 @@ linksProjects.forEach(element => {
 });
 
 const selectProject = async (selection) => {
-    const field = data.map(field => field.projects).flat();
+    const field = data.work.map(field => field.projects).flat();
     const projet = field.filter(project => project.name == selection);
     selectedProject = projet[0];
     // uploadImagesProject(projet[0]);
@@ -62,10 +65,3 @@ const selectProject = async (selection) => {
     // console.log(projectSideRendering(selectedProject));
 };
 
-// about 
-const aboutButton = document.querySelector('#about-link');
-const aboutSection = document.querySelector('#about-section');
-aboutButton.addEventListener('click', () => {
-    aboutButton.classList.toggle('active');
-    aboutSection.classList.toggle('active');
-});

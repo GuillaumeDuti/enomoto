@@ -59,6 +59,7 @@ table {
 
 html {
   font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 0.9rem;
 }
 
 a {
@@ -86,6 +87,7 @@ body {
 
 #site-container aside {
   padding: 50px;
+  padding-right: 0;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -162,10 +164,6 @@ img {
   overflow: hidden;
 }
 
-#project-description {
-  max-width: 400px;
-}
-
 nav {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -187,6 +185,7 @@ nav > div {
 
 nav .top {
   padding: 100px;
+  padding-right: 0;
   padding-bottom: 0;
 }
 
@@ -207,6 +206,10 @@ nav .bottom p {
   max-width: 500px;
 }
 
+nav .bottom a {
+  text-decoration: none;
+}
+
 #menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -216,6 +219,7 @@ nav .bottom p {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 20px;
+  overflow: hidden;
 }
 
 #menu a {

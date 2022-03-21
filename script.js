@@ -44,8 +44,9 @@ linksProjects.forEach(element => {
         selectProject(selection);
 
         const aActive = document.querySelector('a.active');
-        aActive.classList.remove('active');
+        if (aActive) aActive.classList.remove('active');
         element.classList.toggle('active');
+
     });
 });
 
@@ -61,4 +62,10 @@ const selectProject = async (selection) => {
     // console.log(projectSideRendering(selectedProject));
 };
 
-
+// about 
+const aboutButton = document.querySelector('#about-link');
+const aboutSection = document.querySelector('#about-section');
+aboutButton.addEventListener('click', () => {
+    aboutButton.classList.toggle('active');
+    aboutSection.classList.toggle('active');
+});
